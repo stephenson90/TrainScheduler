@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title> Train Scheduler</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	 <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+	 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="jumbotron teal center">
+            <h1>ANYTIME IS TRAIN TIME</h1>
+            <p>Choo Choo. Chee Chee</p>
+        </div>
+       
+        <div class="panel panel-default">
+            <div class="panel-heading teal">
+                <h2 class="panel-title boldy">CURRENT TRAIN SCHEDULE</h2>
+            </div>
+            <div class="panel-body">
+            <table class="table table-hover" id="trainTable">
+            <tr class="boldy">
+            	<th>Train Name</th>
+            	<th>Destination</th>
+            	<th>Frequency (min)</th>
+            	<th>Next Arrival</th>
+            	<th>Minutes Away</th>
+            </tr>
+            <tr>
+             <td id="tname"></td>
+             <td id="tdestin"></td>
+             <td id="tfrequen"></td>
+             <td id="tnext"></td>
+             <td id="tmins"></td>
+             </tr>
+			</table>
+			</div>
+           
+        </div>
+         <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading teal boldy">ADD TRAIN</div>
+
+             <div class="panel-body">
+                <!-- Sign-up Form (note the various input "types")-->
+                <form name="form">
+                    <div class="form-group teal">
+                        <label for="train">Train Name</label>
+                        <input class="form-control" id="train" type="text">
+                    </div>
+                    <div class="form-group teal">
+                        <label for="city">Destination</label>
+                        <input class="form-control" id="city" type="text">
+                    </div>
+                    <div class="form-group teal">
+                        <label for="time">First Train Time (HH:mm - military time)</label>
+                        <input class="form-control" id="time" type="time">
+                    </div>
+                    <div class="form-group teal">
+                        <label for="frequency">Frequency (min)</label>
+                        <input class="form-control" id="frequency" type="number">
+                    </div>
+                    <button class="btn btn-default teal" id="add-train" type="submit" value="submit">Submit</button>
+                </form>
+            </div>
+          
+        </div>
+    </div>
+   
+
+
+<div class="panel-footer footer">Copyright Jean Davilus 2017</div>
+<script type= "text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
