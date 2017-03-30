@@ -41,7 +41,7 @@ $("#add-train").on("click", function(event){
   	frequency:trainFrequency,
   	time:firstTrain,
   	mins:nbrMinutes,
-  	ttime: nextTrain
+  	
 
   });
 
@@ -84,7 +84,7 @@ console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
     // Next Train
     nextTrain = moment().add(nbrMinutes, "minutes");
 
-  	  	 $("#trainTable").append("<tr>" +"<td>" +childSnapshot.val().train +"</td>"+
+  	  	 $("#trainTable").append("<tr>"+"<td>" +childSnapshot.val().train +"</td>"+
         "<td>" + childSnapshot.val().destination +"</td>"+
         "<td>" + childSnapshot.val().frequency +"</td>"+
         "<td>" + moment(nextTrain).format("hh:mm") + "</td>"+ "<td>" + nbrMinutes+ "</td>"+"</tr>");
